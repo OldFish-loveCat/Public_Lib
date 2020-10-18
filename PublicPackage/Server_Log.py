@@ -1,6 +1,7 @@
 import time
 import sys
 import os
+import glob
 
 class LogServer:
     # 属性值
@@ -31,17 +32,17 @@ class LogServer:
             pass
         return None
 
-    def SetFile(self, addr, Maxbyte, MaxNume):
+    def SetFile(self, addr, Maxbyte, MaxNum):
         """
 
         :param addr:(str)"download" model and the files' route
         :param Maxbyte: (int)"download" model and the file's maxsize
-        :param MaxNume: (int)"download" model and the files' maxNum
+        :param MaxNum: (int)"download" model and the files' maxNum
         :return:
         """
         self.addr = addr
         self.maxByte = Maxbyte * 1024
-        self.maxNum = MaxNume
+        self.maxNum = MaxNum
         return None
 
     # 组合完整log信息函数
@@ -54,6 +55,7 @@ class LogServer:
         if self.level == "download" and self.download_offset is True:
             # 此处实现一个存储文件的功能，在目标路径下存放maxNum个最大为maxByte KB大小的log文件
             pass
+
 
 
 # if __name__ == '__main__':
